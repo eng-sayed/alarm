@@ -74,21 +74,16 @@ class NotificationSettings extends Equatable {
   Map<String, dynamic> toJson() => _$NotificationSettingsToJson(this);
 
   /// Converts to wire datatype which is used for host platform communication.
-  NotificationSettingsWire toWire() => NotificationSettingsWire(
-        title: title,
-        body: body,
-        stopButton: stopButton,
-        icon: icon,
-        // iconColorAlpha: iconColor?.a,
-        // iconColorRed: iconColor?.r,
-        // iconColorGreen: iconColor?.g,
-        // iconColorBlue: iconColor?.b,
-iconColorAlpha: iconColor != null ? iconColor.alpha.toDouble() : null,
-iconColorRed: iconColor != null ? iconColor.red.toDouble() : null,
-iconColorGreen: iconColor != null ? iconColor.green.toDouble() : null,
-iconColorBlue: iconColor != null ? iconColor.blue.toDouble() : null,
-
-      );
+NotificationSettingsWire toWire() => NotificationSettingsWire(
+  title: title,
+  body: body,
+  stopButton: stopButton,
+  icon: icon,
+  iconColorAlpha: iconColor?.alpha.toDouble(),
+  iconColorRed: iconColor?.red.toDouble(),
+  iconColorGreen: iconColor?.green.toDouble(),
+  iconColorBlue: iconColor?.blue.toDouble(),
+);
 
   /// Creates a copy of this notification settings but with the given fields
   /// replaced with the new values.
